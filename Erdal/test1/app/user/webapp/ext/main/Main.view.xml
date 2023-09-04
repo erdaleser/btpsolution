@@ -1,0 +1,49 @@
+<mvc:View xmlns:odata="sap.ui.comp.odata" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:macros="sap.fe.macros"
+    xmlns:html="http://www.w3.org/1999/xhtml" controllerName="ns.user.ext.main.Main" 
+	xmlns:t="sap.ui.table"
+	xmlns:smartList="sap.ui.comp.smartlist">
+    <Page id="Main" title="Main"> 
+        <t:Table 
+		id="_IDGenTable1" 
+		rows="{/users}"
+		selectionMode="MultiToggle"
+		visibleRowCount="3"
+		ariaLabelledBy="title">
+		<t:extension>
+			<OverflowToolbar id="_IDGenOverflowToolbar1" style="Clear">
+				<Title id="title" text="Products"/>
+				<ToolbarSpacer id="_IDGenToolbarSpacer1"/> 
+				<ToggleButton id="_IDGenToggleButton1" text="Save" pressed="false" press="onNavIndicatorsToggleSave"/>	 
+				<ToggleButton id="_IDGenToggleButton2" text="Change" pressed="false" press="onNavIndicatorsToggleChange"/>
+			
+			</OverflowToolbar>
+		</t:extension>
+	<t:columns>
+		<t:Column id="_IDGenColumn1" >
+			<Label id="_IDGenLabel32" text="User Name" />
+						<t:template>
+							<Label id="_IDGenLabel2" text="{UserName}" />
+						</t:template>
+		</t:Column>
+		<t:Column id="_IDGenColumn222">
+			<Label id="_IDGenLabel322"  text="User Type" />
+			<t:template>
+				<ComboBox id="_IDGenComboBox1"
+				showSecondaryValues= "true" 
+				value="{UserType}"
+				items="{/UserValue}">
+				<core:Item id="_IDGenItem1" text="{UserTypeCode}"/>
+			 </ComboBox>
+						</t:template>
+		</t:Column>
+
+		<t:Column id="_IDGenColumn12" >
+			<Label id="_IDGenLabel3221" text="User Name" />
+						<t:template>
+							<Button id="_IDGenButton1" text="Show Details" press="handleDetailsPress"/>
+						</t:template>
+		</t:Column>
+	</t:columns>
+	</t:Table> 
+    </Page>
+</mvc:View>
