@@ -1,5 +1,5 @@
 {
-  "name": "test3",
+  "name": "test4",
   "version": "1.0.0",
   "description": "A simple CAP project.",
   "repository": "<Add your repository here>",
@@ -12,18 +12,16 @@
     "express": "^4"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^1",
-    "@sap/ux-specification": "^1.108.13"
+    "@cap-js/sqlite": "^1"
   },
   "scripts": {
-    "start": "cds-serve",
-    "watch-product": "cds watch --open product/webapp/index.html?sap-ui-xx-viewCache=false"
+    "start": "cds-serve"
   },
   "cds": {
     "requires": {
       "NorthWind": {
         "kind": "odata",
-        "model": "srv/external/NorthWind",
+        "model": "NorthWind",
         "[backend]": {
           "credentials": {
             "url": "https://services.odata.org/Experimental/OData/OData.svc"
@@ -31,8 +29,5 @@
         }
       }
     }
-  },
-  "sapux": [
-    "app/product"
-  ]
+  }
 }

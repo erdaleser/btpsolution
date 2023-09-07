@@ -15,7 +15,7 @@ entity Users:managed
     UserType : String(4);
     UserSurname : String(40); 
     Detail_ID : Integer;  //> foreign key
-    Detail : Association to many Detail on Detail.userID = Detail_ID;
+    Detail : Association to Detail on Detail.userID = Detail_ID;
 }
 
 entity Detail:managed 
@@ -25,6 +25,11 @@ entity Detail:managed
     TelNo : String(10);
     Users : Association to Users;
 } 
+
+
+
+
+
 
 view UserDetail as select from Users
   inner join Detail on Detail.ID = Users.ID {
